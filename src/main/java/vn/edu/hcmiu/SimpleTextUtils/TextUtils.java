@@ -23,6 +23,9 @@ public class TextUtils {
 	public boolean isLowerCase(String input) {
 		return input != null && input.toLowerCase().equals(input);
 	}
-
+	
+	public static boolean isNumeric(String input) {
+		return input != null && input.matches(Constants.NUMERIC_REGEX);
+	}
 
 }

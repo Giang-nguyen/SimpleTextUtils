@@ -33,7 +33,7 @@ public class FileUtil {
 	 * @license MIT
 	 * @date 2014-11-01
 	 */
-	public static String tail(final File file) throws IOException {
+	public static String getLastLine(final File file) throws IOException {
 
 		// file needs to exist
 		if (file.exists() == false || file.isDirectory()) {
@@ -116,8 +116,8 @@ public class FileUtil {
 		return "";
 	}
 	
-	public static String tail(String path) throws IOException {
-		return tail(new File(path));
+	public static String getLastLine(String path) throws IOException {
+		return getLastLine(new File(path));
 	}
 	
 	public static void cleanBlankLines(String path) throws IOException {
