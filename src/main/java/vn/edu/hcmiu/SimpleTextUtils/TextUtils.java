@@ -24,5 +24,8 @@ public class TextUtils {
 		return input != null && input.toLowerCase().equals(input);
 	}
 
+	public static boolean itDigit(String input) {
+		return input != null && input.matches("\\d*");
+	}
 
 }
