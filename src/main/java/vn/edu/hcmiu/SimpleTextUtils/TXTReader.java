@@ -14,6 +14,10 @@ import java.io.UnsupportedEncodingException;
  * @Last modified on May 19th, 2017
  *
  */
+/**
+ * @author hoang.giang
+ *
+ */
 public class TXTReader extends BufferedReader {
 
 	/**
@@ -25,10 +29,21 @@ public class TXTReader extends BufferedReader {
 this(new File(path));
 	}
 
+	/**
+	 * @param path
+	 * @param charset
+	 * @throws FileNotFoundException
+	 * @throws UnsupportedEncodingException
+	 */
 	public TXTReader(String path, String charset) throws FileNotFoundException, UnsupportedEncodingException {
 		this(new File(path), charset);
 	}
 	
+	/**
+	 * @param f
+	 * @throws FileNotFoundException
+	 * @throws UnsupportedEncodingException
+	 */
 	public TXTReader(File f) throws FileNotFoundException, UnsupportedEncodingException {
 		this(f, "UTF-8");
 	}
