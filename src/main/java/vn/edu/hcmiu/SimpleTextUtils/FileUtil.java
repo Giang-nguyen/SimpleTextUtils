@@ -139,5 +139,15 @@ public class FileUtil {
 				input.delete();
 				output.renameTo(input);
 	}
+	
+	public static void cleanBlankLinesForManyFiles(String dir) {
+		cleanBlankLinesForManyFiles(new File(dir));
+	}
+	
+	public static void cleanBlankLinesForManyFiles(File root) {
+		for (String dir : root.list()) {
+			cleanBlankLines(dir);
+		}
+	}
 
 }
