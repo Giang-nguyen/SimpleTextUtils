@@ -125,16 +125,29 @@ public class FileUtil {
 	}
 	
 	public static void cleanBlankLines(File input) throws IOException {
+		File output = new File(input.getParent() + "\\output" + input.getName());
 		TXTReader reader = new TXTReader(input);
-		TXTWriter writer = new TXTWriter("e:\\output.rtf");
+		TXTWriter writer = new TXTWriter(output);
 		String line = null;
 		while ((line = reader.readLine()) != null) {
-			if (!TextUtils.isEmpty(line) && !TextUtils.isBlank(line)) {
+			if (!TextUtils.isEmpty(line)) {
 			writer.write(line);
 			}
 		}
 				writer.close();
 				reader.close();
+				input.delete();
+				output.renameTo(input);
+	}
+	
+	public static void cleanBlankLinesForManyFiles(String dir) {
+		cleanBlankLinesForManyFiles(new File(dir));
+	}
+	
+	public static void cleanBlankLinesForManyFiles(File root) {
+		for (String dir : root.list()) {
+			cleanBlankLines(dir);
+		}
 	}
 
 }

@@ -19,7 +19,7 @@ public class TXTWriter extends BufferedWriter {
 	 * @throws FileNotFoundException
 	 */
 	public TXTWriter(String path) throws FileNotFoundException {
-		super(new OutputStreamWriter(new FileOutputStream(new File(path), true)));
+		this(new File(path));
 	}
 
 	/**

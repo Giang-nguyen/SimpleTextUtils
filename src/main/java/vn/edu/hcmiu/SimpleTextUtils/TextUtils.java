@@ -25,7 +25,10 @@ public class TextUtils {
 	}
 	
 	public static boolean isNumeric(String input) {
-		return input != null && input.matches(Constants.NUMERIC_REGEX);
+		return input != null && input.matches(Constants.NUMERIC_REGEX);}
+
+	public static boolean itDigit(String input) {
+		return input != null && input.matches("\\d*");
 	}
 
 }
