@@ -12,23 +12,24 @@ public class TextUtils {
 		return input == null || input.isEmpty();
 	}
 	
-	public static boolean isBlank(String input) {
+	public static boolean isBlanked(String input) {
 		return input == null || input.trim().isEmpty();
 	}
 	
 	public static boolean isUppercase(String input) {
-		return input != null && input.toUpperCase().equals(input);
+		return !isBlanked(input) && !isNumeric(input) && input.toUpperCase().equals(input);
 	}
 	
-	public boolean isLowerCase(String input) {
-		return input != null && input.toLowerCase().equals(input);
+	public static boolean isLowercase(String input) {
+		return !isBlanked(input) && !isNumeric(input) && input.toLowerCase().equals(input);
 	}
 	
 	public static boolean isNumeric(String input) {
-		return input != null && input.matches(Constants.NUMERIC_REGEX);}
+		return input != null && input.matches(Constants.NUMERIC_REGEX);
+		}
 
-	public static boolean itDigit(String input) {
-		return input != null && input.matches("\\d*");
+	public static boolean isDigit(String input) {
+		return input != null && input.matches(Constants.DIGIT_REGEX);
 	}
 
 }

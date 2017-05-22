@@ -140,11 +140,11 @@ public class FileUtil {
 				output.renameTo(input);
 	}
 	
-	public static void cleanBlankLinesForManyFiles(String dir) {
+	public static void cleanBlankLinesForManyFiles(String dir) throws IOException {
 		cleanBlankLinesForManyFiles(new File(dir));
 	}
 	
-	public static void cleanBlankLinesForManyFiles(File root) {
+	public static void cleanBlankLinesForManyFiles(File root) throws IOException {
 		for (String dir : root.list()) {
 			cleanBlankLines(dir);
 		}
