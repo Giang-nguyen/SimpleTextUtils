@@ -15,13 +15,13 @@ import java.io.UnsupportedEncodingException;
  *
  */
 /**
- * @author hoang.giang
+ * @author Giang Nguyen
  *
  */
 public class TXTReader extends BufferedReader {
 
 	/**
-	 * @param path
+	 * @param path The file directory
 	 * @throws FileNotFoundException
 	 * @throws UnsupportedEncodingException 
 	 */

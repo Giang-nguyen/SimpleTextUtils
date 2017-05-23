@@ -116,14 +116,30 @@ public class FileUtil {
 		return "";
 	}
 	
+	/**
+	 * Get last line of a text file
+	 * @param path The address of the file
+	 * @return The last line or an empty string if nothing was found
+	 * @throws IOException
+	 */
 	public static String getLastLine(String path) throws IOException {
 		return getLastLine(new File(path));
 	}
 	
+	/**
+	 * Delete blank lines of a text file. Work best with *.txt files. 
+	 * @param path File address
+	 * @throws IOException
+	 */
 	public static void cleanBlankLines(String path) throws IOException {
 		cleanBlankLines(new File(path));
 	}
 	
+	/**
+	 * Delete blank lines of a text file. Work best with *.txt files.
+	 * @param input The file object of the text file
+	 * @throws IOException
+	 */
 	public static void cleanBlankLines(File input) throws IOException {
 		File output = new File(input.getParent() + "\\output" + input.getName());
 		TXTReader reader = new TXTReader(input);
@@ -140,10 +156,20 @@ public class FileUtil {
 				output.renameTo(input);
 	}
 	
+	/**
+	 * Delete blank lines in many files in the same folder. Work best with *.txt files.
+	 * @param dir Folder directory
+	 * @throws IOException
+	 */
 	public static void cleanBlankLinesForManyFiles(String dir) throws IOException {
 		cleanBlankLinesForManyFiles(new File(dir));
 	}
 	
+	/**
+	 * Delete blank lines in many files in the same folder. Work best with *.txt files.
+	 * @param root File object of the folder
+	 * @throws IOException
+	 */
 	public static void cleanBlankLinesForManyFiles(File root) throws IOException {
 		for (String dir : root.list()) {
 			cleanBlankLines(dir);
