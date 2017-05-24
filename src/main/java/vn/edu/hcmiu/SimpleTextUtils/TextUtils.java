@@ -2,9 +2,8 @@ package vn.edu.hcmiu.SimpleTextUtils;
 
 /**
  * @author Giang Nguyen
- * @Created on May 19th, 2017
- * @Last modified on May 19th, 2017
- *
+ * This class provide convenient method to validate String object
+ * 
  */
 public class TextUtils {
 	

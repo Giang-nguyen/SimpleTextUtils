@@ -11,8 +11,7 @@ import java.util.List;
 
 /**
  * @author Giang Nguyen
- * @Created on October 26th, 2015
- * @Last modified on May 19th, 2017
+ * Convenient class for cleaning and extract information from text file
  *
  */
 public class FileUtil {
