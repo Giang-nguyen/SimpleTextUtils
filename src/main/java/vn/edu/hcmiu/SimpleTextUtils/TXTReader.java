@@ -10,19 +10,14 @@ import java.io.UnsupportedEncodingException;
 
 /**
  * @author Giang Nguyen
- * @Created on October 26th, 2015
- * @Last modified on May 19th, 2017
- *
- */
-/**
- * @author Giang Nguyen
+ * Extended function for BufferedReader
  *
  */
 public class TXTReader extends BufferedReader {
 
 	/**
 	 * @param path The file directory
-	 * @throws FileNotFoundException
+	 * @throws FileNotFoundException If the file at the provided location does not exist
 	 * @throws UnsupportedEncodingException 
 	 */
 	public TXTReader(String path) throws FileNotFoundException, UnsupportedEncodingException {
@@ -32,7 +27,7 @@ this(new File(path));
 	/**
 	 * @param path
 	 * @param charset
-	 * @throws FileNotFoundException
+	 * @throws FileNotFoundException If the file at the provided location does not exist
 	 * @throws UnsupportedEncodingException
 	 */
 	public TXTReader(String path, String charset) throws FileNotFoundException, UnsupportedEncodingException {
@@ -41,7 +36,7 @@ this(new File(path));
 	
 	/**
 	 * @param f
-	 * @throws FileNotFoundException
+	 * @throws FileNotFoundException If the file at the provided location does not exist
 	 * @throws UnsupportedEncodingException
 	 */
 	public TXTReader(File f) throws FileNotFoundException, UnsupportedEncodingException {
@@ -50,7 +45,7 @@ this(new File(path));
 	
 	/**
 	 * @param f
-	 * @throws FileNotFoundException
+	 * @throws FileNotFoundException If the file at the provided location does not exist
 	 * @throws UnsupportedEncodingException 
 	 */
 	public TXTReader(File f, String charset) throws FileNotFoundException, UnsupportedEncodingException {

@@ -78,7 +78,7 @@ public class FileUtil {
 							result.setLength(result.length() - newlineLength);
 						}
 						if (result.toString().equals(""))
-							result.append(tryTail(file));
+							result.append(tryGetLastLine(file));
 						return result.toString();
 					}
 				}
@@ -99,7 +99,7 @@ public class FileUtil {
 	 * @return
 	 * @throws IOException
 	 */
-	private static String tryTail(File file) throws IOException {
+	private static String tryGetLastLine(File file) throws IOException {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
 		String line = null;
 		while ((line = reader.readLine()) != null) {
@@ -119,7 +119,7 @@ public class FileUtil {
 	 * Get last line of a text file
 	 * @param path The address of the file
 	 * @return The last line or an empty string if nothing was found
-	 * @throws IOException
+	 * @throws IOException When file connection have problem
 	 */
 	public static String getLastLine(String path) throws IOException {
 		return getLastLine(new File(path));
@@ -128,7 +128,7 @@ public class FileUtil {
 	/**
 	 * Delete blank lines of a text file. Work best with *.txt files. 
 	 * @param path File address
-	 * @throws IOException
+	 * @throws IOException When connection have broblems
 	 */
 	public static void cleanBlankLines(String path) throws IOException {
 		cleanBlankLines(new File(path));
@@ -137,7 +137,7 @@ public class FileUtil {
 	/**
 	 * Delete blank lines of a text file. Work best with *.txt files.
 	 * @param input The file object of the text file
-	 * @throws IOException
+	 * @throws IOException When connection have broblems
 	 */
 	public static void cleanBlankLines(File input) throws IOException {
 		File output = new File(input.getParent() + "\\output" + input.getName());
@@ -158,7 +158,7 @@ public class FileUtil {
 	/**
 	 * Delete blank lines in many files in the same folder. Work best with *.txt files.
 	 * @param dir Folder directory
-	 * @throws IOException
+	 * @throws IOException When connection have broblems
 	 */
 	public static void cleanBlankLinesForManyFiles(String dir) throws IOException {
 		cleanBlankLinesForManyFiles(new File(dir));
@@ -167,7 +167,7 @@ public class FileUtil {
 	/**
 	 * Delete blank lines in many files in the same folder. Work best with *.txt files.
 	 * @param root File object of the folder
-	 * @throws IOException
+	 * @throws IOException When connection have broblems
 	 */
 	public static void cleanBlankLinesForManyFiles(File root) throws IOException {
 		for (String dir : root.list()) {
