@@ -1,4 +1,4 @@
-package vn.edu.hcmiu.SimpleTextUtils;
+package vn.edu.hcmiu.simpleTextUtils;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -14,7 +14,7 @@ import java.util.List;
  * Convenient class for cleaning and extract information from text file
  *
  */
-public class FileUtil {
+public class FileUtils {
 
 	/**
 	 * Returns the last line from a given text file. This method is particularly
@@ -33,7 +33,8 @@ public class FileUtil {
 	 * @date 2014-11-01
 	 */
 	public static String getLastLine(final File file) throws IOException {
-
+return tail(file);
+/*
 		// file needs to exist
 		if (file.exists() == false || file.isDirectory()) {
 			return "";
@@ -91,7 +92,21 @@ public class FileUtil {
 			ex.printStackTrace();
 		}
 		// oops, no line break found or some exception happened
-		return tryTail(file);
+		return tryGetLastLine(file);
+		*/
+	}
+	
+	public static String tail( File file ) throws IOException {
+		String line = null;
+		String lastLine = null;
+		BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file), "UTF-8"));
+		while ((line = reader.readLine()) != null) {
+			if (line.trim().length() > 0) {
+				lastLine = line;
+			}
+		}
+		reader.close();
+		return lastLine == null ? "" : lastLine;
 	}
 
 	/**

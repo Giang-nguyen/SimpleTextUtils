@@ -1,4 +1,4 @@
-package vn.edu.hcmiu.SimpleTextUtils;
+package vn.edu.hcmiu.simpleTextUtils;
 
 import java.io.BufferedWriter;
 import java.io.File;
